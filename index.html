@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lautiiii_F | Perfil</title>
+
+    <style>
+        :root {
+            --accent: #ff00ff;
+            --accent2: #8c00ff;
+            --text: #dbefff;
+            --glass: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Aseguramos que el fondo sea negro desde el inicio */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: #000; 
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        * { box-sizing: border-box; }
+
+        #galaxia {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .wrap {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 32px;
+            border-radius: 18px;
+            background: rgba(10, 10, 15, 0.7); /* Fondo más oscuro para legibilidad */
+            border: 1px solid var(--glass);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero { text-align: center; padding: 30px 10px; }
+
+        .name {
+            font-size: clamp(40px, 7vw, 68px);
+            font-weight: 900;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 0 10px var(--accent));
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 5px var(--accent)); }
+            to { filter: drop-shadow(0 0 20px var(--accent2)); }
+        }
+
+        .role { margin-top: 10px; font-size: 18px; font-weight: 500; }
+        .devtime { margin-top: 6px; font-size: 16px; opacity: .85; }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .badge {
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 22px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid var(--glass);
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .titulo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--glass);
+            padding-bottom: 8px;
+        }
+
+        .titulo h2 { margin: 0; font-size: 1.2rem; }
+
+        .servicio {
+            padding: 12px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, .05);
+            margin-top: 10px;
+        }
+
+        .habilidad { margin: 15px 0; }
+        .barra {
+            height: 10px;
+            background: rgba(255, 255, 255, .1);
+            border-radius: 999px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+
+        .lleno {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        .cta {
+            margin-top: 15px;
+            padding: 14px;
+            width: 100%;
+            border-radius: 12px;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .cta:hover { opacity: 0.9; transform: scale(1.02); }
+
+        footer {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 13px;
+            opacity: .6;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="galaxia"></canvas>
+
+    <main class="wrap">
+        <section class="hero">
+            <div class="name">Lautiiii_F</div>
+            <div class="role">Trabajo en El Tacon de Gta</div>
+            <div class="devtime">⏳ Experiencia acumulada desde el inicio</div>
+
+            <div class="badges">
+                <span class="badge">Especialista</span>
+                <span class="badge">Servicio Premium</span>
+                <span class="badge">Gta V</span>
+                <span class="badge">RolPlayer</span>
+            </div>
+        </section>
+
+        <div class="grid">
+            <div>
+                <div class="card">
+                    <div class="titulo"><h2>Sobre mi</h2><small>Bio</small></div>
+                    <p>Dedicado al mejor servicio en el mundo de GTA, ofreciendo una experiencia única y profesional en el sector.</p>
+                </div>
+
+                <div class="card" style="margin-top:14px">
+                    <div class="titulo"><h2>Servicios</h2><small>Especialidades</small></div>
+                    <div class="servicio"><b>⚔️ Combate y Acción</b><br>Dominio total en situaciones de riesgo.</div>
+                    <div class="servicio"><b>🌍 Experiencia Internacional</b><br>Colaboraciones con los mejores del servidor.</div>
+                    <div class="servicio"><b>💰 Negocios</b><br>El mejor rendimiento garantizado.</div>
+                </div>
+
+                <div class="card" style="margin-top:14px">
+                    <div class="titulo"><h2>Habilidades</h2><small>Stats</small></div>
+                    <div class="habilidad"><b>Persuasión</b>
+                        <div class="barra"><div class="lleno" style="width:100%"></div></div>
+                    </div>
+                    <div class="habilidad"><b>Baile</b>
+                        <div class="barra"><div class="lleno" style="width:95%"></div></div>
+                    </div>
+                    <div class="habilidad"><b>Resistencia</b>
+                        <div class="barra"><div class="lleno" style="width:100%"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <aside>
+                <div class="card">
+                    <div class="titulo"><h2>Contacto</h2><small>Online</small></div>
+                    <p><b>Discord:</b> lautaromc._28586</p>
+                    <button class="cta" onclick="alert('Copiado al portapapeles'); navigator.clipboard.writeText('lautaromc._28586')">
+                        Copiar Discord
+                    </button>
+                </div>
+
+                <div class="card" style="margin-top:14px">
+                    <div class="titulo"><h2>Menciones</h2><small>Sky</small></div>
+                    <div class="servicio">SkyyVodka_</div>
+                    <div class="servicio">Erii</div>
+                    <div class="servicio">Glorry</div>
+                    <div class="servicio">Dhayron</div>
+                </div>
+            </aside>
+        </div>
+
+        <footer>© 2025 • Lautiiii_F • Todos los derechos reservados</footer>
+    </main>
+
+    <script>
+        const canvas = document.getElementById('galaxia');
+        const ctx = canvas.getContext('2d');
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        
+        resize();
+        window.addEventListener('resize', resize);
+
+        const stars = [];
+        for (let i = 0; i < 400; i++) {
+            stars.push({
+                x: Math.random() * window.innerWidth,
+                y: Math.random() * window.innerHeight,
+                r: Math.random() * 1.5 + 0.5,
+                a: Math.random(),
+                d: 0.005 + Math.random() * 0.01
+            });
+        }
+
+        function animar() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "white";
+            
+            stars.forEach(s => {
+                s.a += s.d;
+                if (s.a > 1 || s.a < 0.1) s.d *= -1; // Evita que desaparezcan del todo
+                
+                ctx.globalAlpha = s.a;
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            
+            requestAnimationFrame(animar);
+        }
+        animar();
+    </script>
+</body>
+</html>
